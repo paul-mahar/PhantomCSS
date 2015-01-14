@@ -237,10 +237,10 @@ function asyncCompare( one, two, func ) {
 		initClient();
 	}
 
-	casper.fill( 'form#diff', {
-		'one': one,
-		'two': two
-	} );
+	casper.fillSelectors('form#diff', {
+		'input[name="one"]': one,
+		'input[name="two"]': two
+	});
 
 	casper.evaluate( function ( filename ) {
 		window._imagediff_.run( filename );
